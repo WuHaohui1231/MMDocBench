@@ -168,3 +168,5 @@ outputs/*
 *.csv
 *.jpg
 *.jpeg
+
+eval_results/

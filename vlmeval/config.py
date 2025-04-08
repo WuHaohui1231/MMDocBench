@@ -287,6 +287,30 @@ eagle_series={
     'Eagle-X5-34B-Plus': partial(Eagle, model_path='NVEagle/Eagle-X5-34B-Plus'),
 }
 
+llama_series = {
+    "Llama-3.2-11B-Vision-Instruct": partial(
+        llama_vision, model_path="meta-llama/Llama-3.2-11B-Vision-Instruct"
+    ),
+    "Llama-3.2-V-Pretrained": partial(
+        llama_vision, model_path="/model/haohui/LLaMA-Factory/output/fin_lora_pt_31l-30l"
+    ),
+    "Llama-V-PT-lowR": partial(
+        llama_vision, model_path="/model/haohui/models/pt/pt_30l_fre_lowR"
+    ),
+    "Llama-3.2-11B-Vision-Instruct_PT-FT-Final_31l-30l-finqa": partial(
+        llama_vision,
+        model_path="/model/haohui/models/pt-ft/Llama-3.2-11B-Vision-Instruct_PT-FT-Final_31l-30l-finqa"
+    ),
+    "Llama-V-FT-only": partial(
+        llama_vision, 
+        model_path="/model/haohui/models/pt-ft/ft-only-64r"
+    ),
+    "LLaVA-CoT": partial(llama_vision, model_path="Xkev/Llama-3.2V-11B-cot"),
+    "Llama-3.2-90B-Vision-Instruct": partial(
+        llama_vision, model_path="meta-llama/Llama-3.2-90B-Vision-Instruct"
+    ),
+}
+
 supported_VLM = {}
 
 model_groups = [
@@ -296,7 +320,7 @@ model_groups = [
     deepseekvl_series, minicpm_series, cogvlm_series, wemm_series,
     cambrian_series, chameleon_series, video_models, ovis_series, vila_series,
     mantis_series, mmalaya_series, phi3_series, xgen_mm_series, qwen2vl_series,
-    slime_series, eagle_series
+    slime_series, eagle_series, llama_series
 ]
 
 for grp in model_groups:

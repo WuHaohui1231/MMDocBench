@@ -24,7 +24,7 @@ from .slidevqa import SlideVQA
 from .mmbench_video import MMBenchVideo
 from .text_mcq import CustomTextMCQDataset, TextMCQDataset
 from .videomme import VideoMME
-from .mvbench import MVBench, MVBench_MP4
+# from .mvbench import MVBench, MVBench_MP4
 from .utils import *
 from ..smp import *
 
@@ -122,9 +122,9 @@ IMAGE_DATASET = [
     GMAIMMBenchDataset, MMERealWorld, HRBenchDataset, CRPE, MMDocBench
 ]
 
-VIDEO_DATASET = [
-    MMBenchVideo, VideoMME, MVBench, MVBench_MP4
-]
+# VIDEO_DATASET = [
+#     MMBenchVideo, VideoMME, MVBench, MVBench_MP4
+# ]
 
 TEXT_DATASET = [
     TextMCQDataset
@@ -136,7 +136,8 @@ CUSTOM_DATASET = [
 
 DATASET_COLLECTION = [ConcatDataset]
 
-DATASET_CLASSES = IMAGE_DATASET + VIDEO_DATASET + TEXT_DATASET + CUSTOM_DATASET + DATASET_COLLECTION
+# DATASET_CLASSES = IMAGE_DATASET + VIDEO_DATASET + TEXT_DATASET + CUSTOM_DATASET + DATASET_COLLECTION
+DATASET_CLASSES = IMAGE_DATASET + TEXT_DATASET + CUSTOM_DATASET + DATASET_COLLECTION
 SUPPORTED_DATASETS = []
 for DATASET_CLS in DATASET_CLASSES:
     SUPPORTED_DATASETS.extend(DATASET_CLS.supported_datasets())
